@@ -1,0 +1,168 @@
+/* 🔥 Style global */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #000000, #1a1a1a); /* Dégradé du noir vers un noir plus clair */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* 📌 Barre de navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(42, 45, 53, 0.9);
+    padding: 10px 30px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 1100px;
+    margin-top: 20px;
+}
+
+/* 🎨 Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* 📝 Liste des liens */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 15px;
+    background: #222;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* 🌟 Effet de survol */
+.nav-links a:hover {
+    background: #444;
+    transform: scale(1.1);
+}
+
+/* 📌 Section Présentation */
+.server-presentation {
+    padding: 50px 20px;
+    text-align: center;
+    max-width: 1000px;
+    width: 90%;
+    background: #333;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+}
+
+.server-presentation h2 {
+    font-size: 2.5em;
+    color: #ffffff; /* Couleur attrayante pour le titre */
+    margin-bottom: 20px;
+}
+
+.server-presentation p {
+    font-size: 1.1em;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.server-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.detail {
+    background: #444;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.detail h3 {
+    font-size: 1.5em;
+    color: #f8f8f8; /* Couleur attrayante pour les sous-titres */
+    margin-bottom: 15px;
+}
+
+.detail p {
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+/* 📌 Bouton "Nous rejoindre" */
+.btn {
+    display: inline-block;
+    background-color: #181717;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+}
+
+.btn:hover {
+    background-color: #000000;
+    transform: scale(1.1);
+}
+
+/* 📱 Responsivité pour petits écrans */
+@media (max-width: 768px) {
+    .server-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .detail {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .server-presentation {
+        padding: 30px 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
