@@ -1,0 +1,200 @@
+/* 🔥 Style global */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #000000; /* Fond sombre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    color: white; /* Couleur générale du texte */
+}
+
+/* 📌 Barre de navigation */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #2a2d35;
+    padding: 10px 30px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgb(0, 0, 0);
+    width: 90%;
+    max-width: 1100px;
+    margin-bottom: 20px; /* Un petit espace sous la navbar */
+}
+
+/* 🎨 Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* 📝 Liste des liens */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 15px; /* Plus d'espace entre les liens */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #111;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* 🌟 Effet de survol */
+.nav-links a:hover {
+    background: #000000;
+    transform: scale(1.1);
+}
+
+/* Section Articles */
+.articles-section {
+    text-align: center;
+    padding: 50px 20px;
+    width: 90%;
+    max-width: 1100px;
+    color: white;
+}
+
+/* Titres des articles */
+.articles-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+/* Description des articles */
+.articles-section p {
+    font-size: 1.2em;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+/* Carrousel */
+.carousel-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden; /* Empêche le débordement des éléments */
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.article {
+    min-width: 300px;
+    margin: 0 10px; /* Espacement entre les articles */
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Style des images / GIFs */
+.article-image {
+    width: 100%; /* Prend toute la largeur de l'article */
+    height: auto; /* Maintient les proportions du GIF */
+    max-width: 100%; /* Ajoute une limite de largeur */
+    border-radius: 10px; /* Ajoute des bords arrondis */
+    margin-bottom: 20px; /* Ajoute un peu d'espace sous l'image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ajoute une ombre portée */
+    display: block; /* Assure que l'image s'affiche correctement */
+}
+
+/* Effet de survol sur l'image */
+.article-image:hover {
+    transform: scale(1.05); /* Un léger zoom lors du survol */
+}
+
+/* Boutons de défilement */
+button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+button:hover {
+    color: #007bff;
+}
+
+.scroll-left, .scroll-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.scroll-left {
+    left: 10px;
+}
+
+.scroll-right {
+    right: 10px;
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .carousel-container {
+        width: 100%; /* Prend toute la largeur sur petits écrans */
+    }
+
+    .carousel {
+        flex-direction: column;
+    }
+
+    .article {
+        min-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Ajustement de la navbar pour les petits écrans */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
