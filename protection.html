@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protection - S7</title>
+    <link rel="stylesheet" href="css/en savoir plus.css">
+</head>
+<body>
+
+       <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="S7back.png" alt="Logo">
+                <span>S7</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="articles.html">Articles</a></li>
+                <li><a href="nos-cibles.html">nos cibles</a></li>
+                <li><a href="service.html">Nos services</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Service de Protection</h2>
+            <p>Nous mettons en place des solutions adaptées pour assurer votre sécurité et votre tranquillité.</p>
+        </section>
+
+        <section class="contact">
+            <h2>Besoin d’une assistance ?</h2>
+            <form id="protectionForm">
+                <input type="text" id="name" placeholder="Votre nom" required>
+                <input type="email" id="email" placeholder="Votre email" required>
+                <input type="tel" id="phone" placeholder="Votre numéro de téléphone" required>
+                <textarea id="message" placeholder="Expliquez votre demande..." required></textarea>
+                <button type="submit" class="btn">Demander une assistance</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("protectionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Récupération des valeurs du formulaire
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const message = document.getElementById("message").value;
+
+            // Remplace par ton webhook Discord
+            const webhookURL = "https://discord.com/api/webhooks/1352971138459766825/ygqzgCqGtAQpKCwtgOSH1GCd5eD2MfnPyXm_JzhCDxldBVgiNTILRrmfpQ3Rrk1wgq5w";
+
+            // ID du rôle à ping (remplace avec le vrai ID du rôle Discord)
+            const roleID = "1346048621266599978";  // Remplace par l'ID de ton rôle
+
+            // Création de l'embed Discord avec un ping du rôle
+            const data = {
+                "content": `<@&${roleID}> 🔔 Nouvelle demande de protection reçue !`,  // Ping du rôle
+                "embeds": [{
+                    "title": "🔔 Nouvelle Demande de Protection",
+                    "color": 16711680, // Rouge
+                    "fields": [
+                        {
+                            "name": "👤 Nom",
+                            "value": name,
+                            "inline": true
+                        },
+                        {
+                            "name": "📧 Email",
+                            "value": email,
+                            "inline": true
+                        },
+                        {
+                            "name": "📞 Téléphone",
+                            "value": phone,
+                            "inline": true
+                        },
+                        {
+                            "name": "📜 Message",
+                            "value": message
+                        }
+                    ],
+                    "footer": {
+                        "text": "Service de Protection - S7",
+                        "icon_url": "https://example.com/logo.png"
+                    },
+                    "timestamp": new Date().toISOString()
+                }]
+            };
+
+            // Envoi de la requête au webhook
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("✅ Demande envoyée avec succès !");
+                    document.getElementById("protectionForm").reset();
+                } else {
+                    alert("❌ Erreur lors de l'envoi !");
+                }
+            })
+            .catch(error => {
+                alert("❌ Erreur réseau !");
+                console.error(error);
+            });
+        });
+    </script>
+
+</body>
+</html>
